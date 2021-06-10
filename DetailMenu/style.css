@@ -5,7 +5,7 @@ body {
 header {
     background-color: #fff5eb;
     width: 100%;
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
 }
@@ -44,16 +44,87 @@ section {
     background-color: white;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
 }
 
 .breadImage {
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 100px;
+    display: flex;
+    position: relative;
 }
 
-.breadImage img {
-    width: 500px;
-    height: 500px;
+.breadImage .image {
+    width: 550px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.breadImage .overlay {
+    opacity: 0;
+}
+
+.breadImage:hover .overlay {
+    opacity: 1;
+}
+
+.breadImage .overlay .ovLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 550px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.breadImage .overlay .ovLeft img {
+    width: 20%;
+}
+
+.breadImage .overlay .ovRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 550px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.breadImage .overlay .ovRight img {
+    width: 20%;
+}
+
+.breadImage .overlay .ovBot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 550px;
+    height: 50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.breadImage .overlay .ovBot img {
+    width: 7%;
 }
 
 .breadDetail {
@@ -62,23 +133,26 @@ section {
     display: flex;
     flex-direction: column;
     margin-right: 100px;
+    margin-bottom: 30px;
 }
 
 .breadDetail .title {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
-    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 70px;
     color: brown;
+    margin-bottom: 30px;
 }
 
 .breadDetail .priceAndRate {
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .breadDetail .priceAndRate .price {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     margin-left: 5px;
 }
 
@@ -96,19 +170,49 @@ section {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
     font-weight: bold;
-    margin-left: 5px;
+    margin-left: 15px;
 }
 
 .breadDetail .desc {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 17px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.breadDetail .qty {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.breadDetail .qty #button {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    border-color: black;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.breadDetail .qty #quantity {
+    width: 100%;
+    height: 44px;
+    text-align: center;
+    border-radius: 0;
+    border-color: black;
+    border-left: none;
+    border-right: none;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .breadDetail .addToCart {
-    background-color: brown;
-    width: 200px;
+    background-color: darkred;
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -120,4 +224,85 @@ section {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
     font-size: 20px;
+}
+
+.line {
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 15%;
+}
+
+.recommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 70px;
+}
+
+.recommendation .recTitle {
+    color: brown;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items .arrow {
+    width: 2%;
+    margin-bottom: 20px;
+}
+
+.otherProduct {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.otherProduct img {
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.otherProduct span {
+    margin: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: darkred;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+footer {
+    background-color: darkred;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer .copyright {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .copyright span {
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
