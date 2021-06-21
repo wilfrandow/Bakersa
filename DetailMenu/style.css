@@ -28,7 +28,7 @@ header {
 
 .navbar {
     width: 100%;
-    display: flex;
+    display: none;
     align-items: center;
 }
 
@@ -50,28 +50,31 @@ section {
 }
 
 .detail {
+    width: 90%;
     margin-top: 50px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .breadImage {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 100px;
+    width: 90%;
     display: flex;
     position: relative;
+    justify-content: center;
 }
 
 .breadImage .image {
-    width: 550px;
+    width: 100%;
     height: 550px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px gray;
+    object-fit: cover;
 }
 
 .breadImage .overlay {
     opacity: 0;
+    transition: 0.5s ease;
 }
 
 .breadImage:hover .overlay {
@@ -85,9 +88,15 @@ section {
     position: absolute;
     left: 0;
     width: 50px;
-    height: 550px;
+    height: 100%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+}
+
+.breadImage .overlay .ovLeft a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .breadImage .overlay .ovLeft img {
@@ -101,9 +110,15 @@ section {
     position: absolute;
     right: 0;
     width: 50px;
-    height: 550px;
+    height: 100%;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.breadImage .overlay .ovRight a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .breadImage .overlay .ovRight img {
@@ -117,7 +132,7 @@ section {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 550px;
+    width: 100%;
     height: 50px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -127,13 +142,14 @@ section {
     width: 7%;
 }
 
+.space {
+    width: 7%;
+}
+
 .breadDetail {
-    margin-top: 30px;
-    margin-left: 50px;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    margin-right: 100px;
-    margin-bottom: 30px;
 }
 
 .breadDetail .title {
@@ -145,21 +161,24 @@ section {
 }
 
 .breadDetail .priceAndRate {
+    width: 100%;
     display: flex;
     align-items: center;
     margin-bottom: 30px;
 }
 
 .breadDetail .priceAndRate .price {
+    width: 70%;
+    justify-content: left;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
-    margin-left: 5px;
 }
 
 .breadDetail .priceAndRate .rate {
+    width: 70%;
+    justify-content: right;
     display: flex;
     align-items: center;
-    margin-left: 50px;
 }
 
 .breadDetail .priceAndRate .rate img {
@@ -187,7 +206,7 @@ section {
     justify-content: space-between;
 }
 
-.breadDetail .qty #button {
+.breadDetail .qty #buttonLeft {
     width: 50px;
     height: 50px;
     border-radius: 0;
@@ -196,6 +215,33 @@ section {
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.breadDetail .qty #buttonLeft:hover {
+    background-color: darkred;
+    color: white;
+    transition: 0.2s;
+}
+
+.breadDetail .qty #buttonRight {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    border-color: black;
+    background-color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.breadDetail .qty #buttonRight:hover {
+    background-color: darkred;
+    color: white;
+    transition: 0.2s;
 }
 
 .breadDetail .qty #quantity {
@@ -217,6 +263,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.breadDetail .addToCart:hover {
+    opacity: 1;
+    transition: 0.5s;
 }
 
 .breadDetail .addToCart span {
@@ -230,17 +284,16 @@ section {
     margin-top: 100px;
     margin-left: 50px;
     margin-right: 50px;
-    width: 15%;
+    width: 30%;
 }
 
 .recommendation {
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
     margin-bottom: 70px;
 }
 
@@ -255,25 +308,24 @@ section {
 .items {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 }
 
-.items .arrow {
-    width: 2%;
-    margin-bottom: 20px;
-}
-
 .otherProduct {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 10px;
     justify-content: center;
     align-items: center;
 }
 
+.otherProduct a {
+    display: flex;
+    justify-content: center;
+}
+
 .otherProduct img {
-    width: 350px;
+    width: 90%;
     height: 200px;
     object-fit: cover;
     border-radius: 20px;
@@ -305,4 +357,114 @@ footer .copyright {
 footer .copyright span {
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media only screen and (max-width:500px) {
+    .navbar {
+        display: none;
+    }
+
+    section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .detail {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .breadImage {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .breadImage .image {
+        width: 100%;
+        height: 300px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .breadImage .overlay {
+        opacity: 1;
+    }
+
+    .breadImage .overlay .ovLeft {
+        width: 12%;
+        height: 100%;
+    }
+    
+    .breadImage .overlay .ovRight {
+        width: 12%;
+        height: 100%;
+    }
+    
+    .breadImage .overlay .ovBot {
+        width: 100%;
+        height: 10%;
+    }
+
+    .breadImage .overlay .ovBot img {
+        width: 10%;
+    }
+
+    .breadDetail {
+        width: 80%;
+        margin-top: 30px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .breadDetail .title {
+        font-size: 40px;
+    }
+
+    .breadDetail .priceAndRate {
+        align-items: unset;
+        justify-content: left;
+        flex-direction: column;
+    }
+
+    .breadDetail .priceAndRate .price {
+        margin-left: 0;
+    }
+
+    .breadDetail .priceAndRate .rate {
+        margin-top: 30px;
+        margin-left: 0;
+    }
+
+    .line {
+        width: 70%;
+    }
+
+    .recommendation {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .recommendation .recTitle {
+        font-size: 30px;
+    }
+
+    .items {
+        flex-direction: column;
+    }
+
+    .otherProduct {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .otherProduct img {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
 }
