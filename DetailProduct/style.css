@@ -91,6 +91,7 @@ section {
     height: 100%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    cursor: pointer;
 }
 
 .breadImage .overlay .ovLeft a {
@@ -113,6 +114,7 @@ section {
     height: 100%;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    cursor: pointer;
 }
 
 .breadImage .overlay .ovRight a {
@@ -225,6 +227,10 @@ section {
     transition: 0.2s;
 }
 
+.breadDetail .qty #buttonLeft:active {
+    transform: translateY(2px);
+}
+
 .breadDetail .qty #buttonRight {
     width: 50px;
     height: 50px;
@@ -242,6 +248,10 @@ section {
     background-color: darkred;
     color: white;
     transition: 0.2s;
+}
+
+.breadDetail .qty #buttonRight:active {
+    transform: translateY(2px);
 }
 
 .breadDetail .qty #quantity {
@@ -271,6 +281,10 @@ section {
 .breadDetail .addToCart:hover {
     opacity: 1;
     transition: 0.5s;
+}
+
+.breadDetail .addToCart:active {
+    transform: translateY(2px);
 }
 
 .breadDetail .addToCart span {
@@ -330,6 +344,15 @@ section {
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 2px 2px 2px gray;
+    transition: 0.2s;
+}
+
+.otherProduct img:hover {
+    transform: translateY(-3px);
+}
+
+.otherProduct img:active {
+    transform: translateY(3px);
 }
 
 .otherProduct span {

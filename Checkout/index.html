@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- IMG -->
+            <span>
+                Bakersa
+            </span>
+        </div>
+        <div class="navbar">
+            <a href="#">
+                Home
+            </a>
+            <a href="#">
+                Location
+            </a>
+            <a href="#">
+                Classic Bread
+            </a>
+            <a href="#">
+                Checkout
+            </a>
+        </div>
+    </header>
+    <section>
+        <div class="upper">
+            <span class="title">
+                My Cart
+            </span>
+            <div class="emptyCart">
+                <img src="Assets/EmptyCart.png">
+                <p>
+                    Oh no! Your cart is empty :'(
+                </p>
+                <p>
+                    Buy some breads to see your cart!
+                </p>
+            </div>
+            <div class="listTitle">
+                <div class="product">
+                    Product
+                </div>
+                <div class="price">
+                    Price
+                </div>
+                <div class="qty">
+                    Quantity
+                </div>
+                <div class="totalPrice">
+                    Total Price
+                </div>
+            </div>
+        </div>
+        <hr id="line">
+        <div class="cartList">
+            <div class="itemList">
+                <div class="product">
+                    <div class="empty">
+                    </div>
+                    <div class="breadImage">
+                        <img src="Assets/Bagel 1.jpg">
+                    </div>
+                    <div class="empty">
+                    </div>
+                    <div class="breadDetail">
+                        <span class="breadName">
+                            Bagel
+                        </span>
+                        <span class="breadDesc">
+                            Bagel is a bread originating in the Jewish communities of Poland. It is shaped by hand into the form of a ring from yeasted wheat dough, roughly hand-sized. It is dense, chewy, doughy interior with a browned and crisp exterior. Bagels are topped with seeds baked on the outer crust.
+                        </span>
+                    </div>
+                    <div class="empty">
+                    </div>
+                </div>
+                <div class="price">
+                    $10.99
+                </div>
+                <div class="qty">
+                    <div>
+                        <button class="min">
+                            -
+                        </button>
+                    </div>
+                    <div class="quantity">
+                        
+                    </div>
+                    <div>
+                        <button class="plus">
+                            +
+                        </button>
+                    </div>
+                </div>
+                <div class="totalPrice">
+                    $20.98
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="total">
+            <div class="payName">
+                <div class="subtotal">
+                    Subtotal
+                </div>
+                <div class="shipfee">
+                    Shipping Fee
+                </div>
+                <hr>
+                <div class="grandtotal">
+                    Grand Total
+                </div>
+            </div>
+            <div class="payAmount">
+                <div class="subtotal">
+                    $20.98
+                </div>
+                <div class="shipfee">
+                    Free
+                </div>
+                <hr>
+                <div class="grandtotal">
+                    $20.98
+                </div>
+            </div>
+        </div>
+        <div class="recipient">
+            <div class="formTitle">
+                Shipping Detail
+            </div>
+            <div class="form">
+                <div class="name">
+                    <div class="col">
+                        <label for="fname">First Name <span style="color: red">*</span></label>
+                        <input type="text" name="fname" id="fname">
+                    </div>
+                    <div class="empty">
+                    </div>
+                    <div class="col">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" id="lname">
+                    </div>
+                </div>
+                <div class="name">
+                    <div class="col">
+                        <label for="email">Email <span style="color: red">*</span></label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="empty">
+                    </div>
+                    <div class="col">
+                        <label for="phone">Phone Number <span style="color: red">*</span></label>
+                        <input type="text" name="phone" id="phone" placeholder="Format : 08...">
+                    </div>
+                </div>
+                <label for="address">Address <span style="color: red">*</span></label>
+                <textarea name="address" id="address" rows="3"></textarea>
+                <div class="name">
+                    <div class="col">
+                        <label for="courier" id="cLabel">Courier<br><br></label>
+                        <select name="courier" id="courier">
+                            <option value="gosend">Go-Send</option>
+                            <option value="grabsend">GrabSend</option>
+                            <option value="paxel">Paxel</option>
+                            <option value="shopeefood">ShopeeFood</option>
+                        </select>
+                    </div>
+                    <div class="empty">
+                    </div>
+                    <div class="col">
+                        <label for="delivery">
+                            Delivery Time (10:00 - 18:59) <span style="color: red">*</span>
+                            <br>
+                            <span style="font-size: 12px">
+                                Will be delivered tomorrow if the time has past.
+                            </span>
+                        </label>
+                        <input type="text" name="delivery" id="delivery" placeholder="Format : hh:mm">
+                    </div>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="subscribe" id="subscribe">
+                    I want to subscribe for the newsletter
+                </div>
+                <p>
+                    <span style="color: red">*</span> : Required
+                </p>
+            </div>
+        </div>
+        <div class="empty">
+        </div>
+        <div class="checkout">
+            Checkout
+        </div>
+    </section>
+    <footer>
+        <!-- Social Media -->
+        <div class="copyright">
+            <span>
+                &copy Copyright 2021 Bakersa
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
