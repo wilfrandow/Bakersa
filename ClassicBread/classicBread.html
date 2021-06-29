@@ -26,8 +26,11 @@
         <div class="menuList">
 
             <img src="Assets/left-arrow.png" class="arrow" 
-            onclick="previousMenu('favorites','fav_1_text','fav_1_image','fav_1_link','fav_2_text','fav_2_image','fav_2_link',
-            'fav_3_text','fav_3_image','fav_3_link','fav_4_text','fav_4_image','fav_4_link')" title="Previous">
+            onclick="previousMenu('favorites',
+            'fav_1_text','fav_1_price','fav_1_image','fav_1_link',
+            'fav_2_text','fav_2_price','fav_2_image','fav_2_link',
+            'fav_3_text','fav_3_price','fav_3_image','fav_3_link',
+            'fav_4_text','fav_4_price','fav_4_image','fav_4_link')" title="Previous">
             
             <!-- text, image, dan link dri menu nya -->
             <div class="menuListItems">
@@ -38,7 +41,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="fav_1_text"></span>
+                <span id="fav_1_text" class="menuListItemsText"></span>
+                <span id="fav_1_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -49,7 +53,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="fav_2_text"></span>
+                <span id="fav_2_text" class="menuListItemsText"></span>
+                <span id="fav_2_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -60,7 +65,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="fav_3_text"></span>
+                <span id="fav_3_text" class="menuListItemsText"></span>
+                <span id="fav_3_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -71,12 +77,16 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="fav_4_text"></span>
+                <span id="fav_4_text" class="menuListItemsText"></span>
+                <span id="fav_4_price" class="menuListItemsPrice"></span>
             </div>
 
             <img src="Assets/right-arrow.png" class="arrow" 
-            onclick="nextMenu('favorites','fav_1_text','fav_1_image','fav_1_link','fav_2_text','fav_2_image','fav_2_link',
-            'fav_3_text','fav_3_image','fav_3_link','fav_4_text','fav_4_image','fav_4_link')" title="Next">
+            onclick="nextMenu('favorites',
+            'fav_1_text','fav_1_price','fav_1_image','fav_1_link',
+            'fav_2_text','fav_2_price','fav_2_image','fav_2_link',
+            'fav_3_text','fav_3_price','fav_3_image','fav_3_link',
+            'fav_4_text','fav_4_price','fav_4_image','fav_4_link')" title="Next">
 
             <!-- Button previous & next buat MOBILE -->
             <img src="Assets/left-arrow.png" class="arrow hiddenElement" onclick="previousMenu('favorites','fav_1_text','fav_1_image','fav_1_link','fav_2_text','fav_2_image','fav_2_link','fav_3_text','fav_3_image','fav_3_link','fav_4_text','fav_4_image','fav_4_link')" title="Previous">
@@ -98,10 +108,11 @@
         <div class="menuList">
 
             <img src="Assets/left-arrow.png" class="arrow" 
-            onclick="previousMenu('breads','breads_1_text','breads_1_image','breads_1_link',
-            'breads_2_text','breads_2_image','breads_2_link',
-            'breads_3_text','breads_3_image','breads_3_link',
-            'breads_4_text','breads_4_image','breads_4_link')" title="Previous">
+            onclick="previousMenu('breads',
+            'breads_1_text','breads_1_price','breads_1_image','breads_1_link',
+            'breads_2_text','breads_2_price','breads_2_image','breads_2_link',
+            'breads_3_text','breads_3_price','breads_3_image','breads_3_link',
+            'breads_4_text','breads_4_price','breads_4_image','breads_4_link')" title="Previous">
             
             <!-- text, image, dan link dri menu nya -->
             <div class="menuListItems">
@@ -112,7 +123,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="breads_1_text"></span>
+                <span id="breads_1_text" class="menuListItemsText"></span>
+                <span id="breads_1_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -123,7 +135,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="breads_2_text"></span>
+                <span id="breads_2_text" class="menuListItemsText"></span>
+                <span id="breads_2_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -134,7 +147,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="breads_3_text"></span>
+                <span id="breads_3_text" class="menuListItemsText"></span>
+                <span id="breads_3_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -145,14 +159,16 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="breads_4_text"></span>
+                <span id="breads_4_text" class="menuListItemsText"></span>
+                <span id="breads_4_price" class="menuListItemsPrice"></span>
             </div>
 
             <img src="Assets/right-arrow.png" class="arrow" 
-            onclick="nextMenu('breads','breads_1_text','breads_1_image','breads_1_link',
-            'breads_2_text','breads_2_image','breads_2_link',
-            'breads_3_text','breads_3_image','breads_3_link',
-            'breads_4_text','breads_4_image','breads_4_link')" title="Next">
+            onclick="nextMenu('breads',
+            'breads_1_text','breads_1_price','breads_1_image','breads_1_link',
+            'breads_2_text','breads_2_price','breads_2_image','breads_2_link',
+            'breads_3_text','breads_3_price','breads_3_image','breads_3_link',
+            'breads_4_text','breads_4_price','breads_4_image','breads_4_link')" title="Next">
 
             <!-- Button previous & next buat MOBILE -->
             <img src="Assets/left-arrow.png" class="arrow hiddenElement" onclick="previousMenu('breads','breads_1_text','breads_1_image','breads_1_link','breads_2_text','breads_2_image','breads_2_link','breads_3_text','breads_3_image','breads_3_link','breads_4_text','breads_4_image','breads_4_link')" title="Previous">
@@ -174,10 +190,11 @@
         <div class="menuList">
 
             <img src="Assets/left-arrow.png" class="arrow" 
-            onclick="previousMenu('pastry','pastry_1_text','pastry_1_image','pastry_1_link',
-            'pastry_2_text','pastry_2_image','pastry_2_link',
-            'pastry_3_text','pastry_3_image','pastry_3_link',
-            'pastry_4_text','pastry_4_image','pastry_4_link')" title="Previous">
+            onclick="previousMenu('pastry',
+            'pastry_1_text','pastry_1_price','pastry_1_image','pastry_1_link',
+            'pastry_2_text','pastry_2_price','pastry_2_image','pastry_2_link',
+            'pastry_3_text','pastry_3_price','pastry_3_image','pastry_3_link',
+            'pastry_4_text','pastry_4_price','pastry_4_image','pastry_4_link')" title="Previous">
             
             <!-- text, image, dan link dri menu nya -->
             <div class="menuListItems">
@@ -188,7 +205,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="pastry_1_text"></span>
+                <span id="pastry_1_text" class="menuListItemsText"></span>
+                <span id="pastry_1_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -199,7 +217,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="pastry_2_text"></span>
+                <span id="pastry_2_text" class="menuListItemsText"></span>
+                <span id="pastry_2_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -210,7 +229,8 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="pastry_3_text"></span>
+                <span id="pastry_3_text" class="menuListItemsText"></span>
+                <span id="pastry_3_price" class="menuListItemsPrice"></span>
             </div>
 
             <div class="menuListItems">
@@ -221,14 +241,16 @@
                         <div class="menuListItemsOverlayText">VIEW ITEM</div>
                     </div>
                 </a>
-                <span id="pastry_4_text"></span>
+                <span id="pastry_4_text" class="menuListItemsText"></span>
+                <span id="pastry_4_price" class="menuListItemsPrice"></span>
             </div>
 
             <img src="Assets/right-arrow.png" class="arrow" 
-            onclick="nextMenu('pastry','pastry_1_text','pastry_1_image','pastry_1_link',
-            'pastry_2_text','pastry_2_image','pastry_2_link',
-            'pastry_3_text','pastry_3_image','pastry_3_link',
-            'pastry_4_text','pastry_4_image','pastry_4_link')" title="Next">
+            onclick="nextMenu('pastry',
+            'pastry_1_text','pastry_1_price','pastry_1_image','pastry_1_link',
+            'pastry_2_text','pastry_2_price','pastry_2_image','pastry_2_link',
+            'pastry_3_text','pastry_3_price','pastry_3_image','pastry_3_link',
+            'pastry_4_text','pastry_4_price','pastry_4_image','pastry_4_link')" title="Next">
 
             <!-- Button previous & next buat MOBILE -->
             <img src="Assets/left-arrow.png" class="arrow hiddenElement" onclick="previousMenu('pastry','pastry_1_text','pastry_1_image','pastry_1_link','pastry_2_text','pastry_2_image','pastry_2_link','pastry_3_text','pastry_3_image','pastry_3_link','pastry_4_text','pastry_4_image','pastry_4_link')" title="Previous">
