@@ -37,16 +37,16 @@ img_b.attr("src", imgs[cur_id++].getImage)
 
 setInterval(() => {
     if (cur_id % 2 == 0){
-        img_b.fadeOut(4000, () => {
+        img_b.fadeOut(2000, () => {
             img_b.attr("src", imgs[cur_id++].getImage)
         })
     } else {
-        img_b.fadeIn(4000, () => {
+        img_b.fadeIn(2000, () => {
             img_a.attr("src", imgs[cur_id++].getImage)
         })
     }
     if (cur_id > 11) cur_id = 0
-}, 8000)
+}, 3000)
 
 
 
