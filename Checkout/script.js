@@ -49,16 +49,16 @@ function printProduct() {
             $${price}
         </div>
         <div class="qty">
-            <div>
-                <button class="min">
+            <div class="min">
+                <button>
                     -
                 </button>
             </div>
             <div class="quantity">
                 ${quantity}
             </div>
-            <div>
-                <button class="plus">
+            <div class="plus">
+                <button>
                     +
                 </button>
             </div>
@@ -104,7 +104,6 @@ function runButton() {
                 let count = cartProduct[index].quantity
                 localStorage.setItem("CART", JSON.stringify(cartProduct))
                 qtyItem[index].innerHTML = count
-                
             }
             else if(cartProduct[index].quantity == 1) {
                 let deleteItem = confirm("Do you want to delete this product from your cart?")
@@ -116,6 +115,7 @@ function runButton() {
             printProduct()
             runButton()
             countTotal()
+            console.log("clicked");
         })
         buttonMax[index].addEventListener("click", () => {
             cartProduct[index].quantity += 1
@@ -125,7 +125,9 @@ function runButton() {
             printProduct()
             runButton()
             countTotal()
+            console.log("clicked");
         })
+        console.log("sini")
     }
 }
 

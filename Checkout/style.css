@@ -461,11 +461,15 @@ hr {
     .itemList .product .breadDetail {
         width: 65%;
         justify-content: flex-start;
-    }   
+    }
+
+    .itemList .product .breadDetail .breadName {
+        font-size: 25px;
+    }
 
     .itemList .product .breadDetail .breadDesc {
         width: 100%;
-        font-size: 8px;
+        font-size: 7.5px;
     }
 
     .itemList .price {
@@ -474,9 +478,9 @@ hr {
 
     .itemList .qty {
         width: 60%;
-        display: flex;
         position: absolute;
         justify-content: flex-end;
+        z-index: 1;
     }
 
     .itemList .qty div {
@@ -514,6 +518,10 @@ hr {
 
     .payAmount {
         width: 40%;
+    }
+
+    .payAmount hr {
+        width: 100%;
     }
 
     .name {
