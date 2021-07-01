@@ -7,6 +7,7 @@
     <title>Bakersa</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../Header-Footer/header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../jquery-3.6.0.min.js" defer></script>
     <script src="../Header-Footer/header-footer.js" defer></script>
     <script src="scriptHome.js" defer></script>
@@ -20,7 +21,12 @@
             </span>
         </div>
         <div class="navbar">
-            <img id="img-menu" src="" alt="menu">
+            <div id="menu-dropdown">
+                <h3>
+                    MENU
+                </h3>
+                <i class="fa fa-chevron-down"></i>
+            </div>
             <div id="dropdown">
                 <a href="../Home/Home.html">
                     Home
@@ -65,6 +71,12 @@
             <span>
                 &copy Copyright 2021 Bakersa
             </span>
+        </div>
+        <div id="search-bar">
+            <input type="text" placeholder="Search our location">
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
         </div>
     </footer>
 </body>
