@@ -4,6 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Header-Footer/header-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js" defer></script>
     <script src="../jquery-3.6.0.min.js" defer></script>
     <script src="../header-footer.js" defer></script>
@@ -11,7 +13,36 @@
     <title>Classic Bread</title>
 </head>
 <body>
-    <div id="header"></div>
+    <header>
+        <div class="logo">
+            <img src="../logo/logo_no_bg.png" alt="logo">
+            <span>
+                Bakersa
+            </span>
+        </div>
+        <div class="navbar">
+            <div id="menu-dropdown">
+                <h3>
+                    MENU
+                </h3>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            <div id="dropdown">
+                <a href="../Home/Home.html">
+                    Home
+                </a>
+                <a href="../ClassicBread/classicBread.html">
+                    Classic Bread
+                </a>
+                <a href="../CustomCake/index.html">
+                    Custom Cake
+                </a>
+                <a href="../Checkout/checkout.html">
+                    Checkout
+                </a>
+            </div>
+        </div>
+    </header>
     <section id="menu">
         <p id="menuTitle">CLASSIC BREADS</p>
 
@@ -290,6 +321,18 @@
         </div>
         
     </section>
-    <div id="footer"></div>
+    <footer>
+        <div id="search-bar">
+            <input type="text" placeholder="Search our location">
+            <button type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="copyright">
+            <span>
+                &copy Copyright 2021 Bakersa
+            </span>
+        </div>
+    </footer>
 </body>
 </html>

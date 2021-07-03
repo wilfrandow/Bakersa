@@ -46,7 +46,20 @@ setInterval(() => {
         })
     }
     if (cur_id > 11) cur_id = 0
+    // console.log(cur_id)
 }, 3000)
 
 
+// SLIDER ANIMATION
+let slider = $("#slider")
+
+let cur_promo = 0
+let width = 250
+
+setInterval(() => {
+    let left_val = -1 * ((cur_promo++ % 3) * width)
+    slider.animate({
+        left: left_val
+    }, 1000)
+}, 4000)
 
