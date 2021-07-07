@@ -186,7 +186,7 @@ body {
     height: 280px;
 }
 
-#img-a, #img-b{
+.img-fading-src{
     position: absolute;
     display: block;
     border-radius: 10px;
