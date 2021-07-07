@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakersa - Make Custom Cake</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./cScript.js"></script>
+</head>
+<body>
+    <section id="title">
+        <nav>
+            <a href="../Home/Home.html">
+                Back
+            </a>
+        </nav>
+        <p id="menuTitle">CUSTOM CAKE</p>
+        <p id="menuDesc">Make your own cake style</p>
+    </section>
+    <section id="content">
+        <div id="cake-image">
+            <div id="cake-message"></div>
+            <div id="cake-preview">
+                
+            </div>
+        </div>
+        <div class="choose">
+            <div class="title">Choose your cake style</div>
+            <form action="#">
+                <label>Cake Base</label>
+                <div id="radio-container">
+                    <div>
+                        <input type="radio" name="base-cake" id="vanilla" onclick="baseCake(id)">
+                        <label for="vanilla">Vanilla</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="base-cake" id="chocolate" onclick="baseCake(id)">
+                        <label for="chocolate">Chocolate</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="base-cake" id="strawberry" onclick="baseCake(id)">
+                        <label for="strawberry">Strawberry</label>
+                    </div>
+                </div>
+                <label>Cream</label>
+                <div class="radio-container2">
+                    <div>
+                        <input type="radio" name="cream" id="add-cream" onclick="creamCake(id)">
+                        <label for="add-cream">Add Cream</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="cream" id="no-cream" onclick="creamCake(id)">
+                        <label for="no-cream">No Cream</label>
+                    </div>
+                </div>
+                <label>Cake Message</label> <br>
+                <textarea name="message" id="cakemessage" placeholder="Type Message Here"></textarea>
+                <button type="button" onclick="printCakeMessage()">Ok</button> <br>
+                <label>Text Color</label> <br>
+                <input type="color" name="text-color" id="text-color">
+                <button type="button" onclick="printCakeMessage()">Ok</button> <br>
+            </form>
+            <div id="add-button">
+                <div class="add-to-cart">
+                    <span>Add To Cart</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
