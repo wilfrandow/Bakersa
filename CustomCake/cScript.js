@@ -55,6 +55,15 @@ function creamCake(cream){
     }
 }
 
+<<<<<<< Updated upstream
+=======
+window.addEventListener("load", ()=>{
+    let defPrev = document.getElementById("cake-preview")
+    let defaults = `<img src="./Assets/Vanilla-Base.jpg" alt="Cake Preview">`
+    defPrev.innerHTML = defaults
+})
+
+>>>>>>> Stashed changes
 function changePreviewImage(link){
     let image = (link)=>
     `<img src="${link}" alt="Cake Preview">`

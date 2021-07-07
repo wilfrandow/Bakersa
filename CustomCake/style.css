@@ -1,8 +1,21 @@
-nav{
-    width: 20%;
-    margin-top: 50px;
-    margin-left: 50px;
+@font-face {
+    font-family: textFont;
+    src: url(Assets/destain.ttf);
+}
+
+body {
+    margin: 0;
+}
+
+section {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    margin-top: 30px;
 }
 
 #menuTitle{
@@ -19,38 +32,159 @@ nav{
     color: brown;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 36px;
-    font-weight: bold;
     margin-top: 0px;
     margin-bottom: 50px;
     text-align: center;
 }
 
 #content{
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;   
+    align-items: center;
+    background-color: #b28172;
 }
 
 #cake-image{
-    width: 50%;
-    border: 2px solid black;
-    margin-right: 20px;
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    background-color: #b28172;
+}
+
+.empty {
+    width: 5%;
+}
+
+#cake-preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#cake-preview img{
+    width: 80%;
+}
+
+#cake-text {
+    width: 7%;
+    position: absolute;
+    font-family: textFont;
+    font-size: 2.5vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#cake-text span {
+    justify-content: center;
+    align-items: center;
 }
 
 .choose{
     width: 50%;
-    border: 2px solid black;
-    margin-left: 20px;
-    padding-top: 10px;
+    height: 100%;
 }
 
-.choose .title{
-    padding-left: 20px;
-}
-
-.choose form{
+.choose .title {
+    display: flex;
+    justify-content: flex-start;
     margin-top: 10px;
-    padding-left: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.choose .title span{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: black;
+    text-shadow: 2px 2px 2px black;
+}
+
+.choose .radio {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.7vw;
+    font-weight: 500;
+    color: black;
+}
+
+.choose .radio .half {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.choose .radio .half span {
+    color: darkred;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.choose .text {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: darkred;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.choose .text .half {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.choose .text .half input {
+    border: 2px solid #5a5a5a;
+    margin-top: 10px;
+    height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.choose .text .half input:hover {
+    border: 2px solid black;
+}
+
+.choose .text .half input:focus {
+    outline: none;
+    border: 2px solid black;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.choose .text .half .input-color {
+    display: flex;
+    flex-direction: row;
+}
+
+.choose .text .half .input-color input {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.choose .text .half .input-color button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #5a5a5a;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #add-button{
@@ -61,7 +195,7 @@ nav{
 
 .choose .add-to-cart{
     background-color: darkred;
-    width: 80%;
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -69,6 +203,7 @@ nav{
     cursor: pointer;
     opacity: 0.8;
     transition: 0.5s;
+    margin-left: 10px;
 }
 
 .choose .add-to-cart span {
@@ -78,13 +213,52 @@ nav{
     font-size: 20px;
 }
 
-#cake-preview img{
-    width: 60%;
-    border-radius: 30px;
-}
+@media only screen and (max-width:500px) {
+    #content {
+        flex-direction: column;
+    }
 
-#cake-preview{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    #cake-preview img {
+        width: 200%;
+    }
+
+    #cake-text {
+        width: 20%;
+        position: absolute;
+        font-family: textFont;
+        font-size: 5vw;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .choose {
+        width: 90%;
+    }
+
+    .choose .radio {
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    .choose .radio .half {
+        width: 100%;
+    }
+
+    .choose .radio .half span {
+        font-size: 20px;
+    }
+
+    .choose .text {
+        flex-direction: column;
+    }
+
+    .choose .text .half {
+        width: 90%;
+        padding-right: 0;
+    }
+
+    .choose .text .half span {
+        font-size: 20px;
+    }
 }
