@@ -5,6 +5,56 @@ let vanillaCream = "Assets/Vanilla-cream.jpg"
 let chocolateCream = "Assets/Chocolate-cream.jpg"
 let strawberryCream = "Assets/Strawberry-cream.jpg"
 
+//canvas and loading screen
+const canvas = document.getElementById("loadingCanvas")
+canvas.height = 700
+canvas.width = 700
+const ctx = canvas.getContext("2d")
+
+function random(min, max){
+    if(min>max) return -1;
+    const range = max - min + 1
+    return Math.floor(Math.random()*range)+min;
+}
+
+let limit = 250
+let x = random(0, canvas.width-limit)
+let y = random(0, canvas.height-limit)
+let vx = random(8,12);
+let vy = random(8,12);
+let bouncingId;
+
+function bouncing(){
+    ctx.clearRect(0,0, canvas.width, canvas.height)
+    ctx.beginPath()
+    const imgTag = document.getElementById("logo-loading")
+    ctx.drawImage(imgTag,x,y,250,250)
+
+    if(x > canvas.width-limit) vx = -(random(8,12));
+    if(x < 0) vx = random(4,8);;
+    if(y > canvas.height-limit) vy = -(random(8,12));
+    if(y < 0) vy = random(8,12);
+
+    x+=vx
+    y+=vy
+
+    bouncingId = requestAnimationFrame(bouncing)
+}
+
+function goLoading(){
+    bouncing()
+
+    setTimeout(() => {
+        cancelAnimationFrame(bouncingId)
+        ctx.clearRect(0,0, canvas.width, canvas.height)
+    }, 1000);
+}
+
+function stopManual(){
+    cancelAnimationFrame(bouncingId)
+    ctx.clearRect(0,0, canvas.width, canvas.height)
+}
+
 // set default value of radio button
 let baseCakeRadio = document.getElementsByName("base-cake")
 baseCakeRadio[0].checked = true
@@ -16,12 +66,12 @@ let cakeBase = "vanilla";
 let cakeCream  = "no-cream";
 
 function baseCake(base){
-    // disini panggil fungsi loading screen
-
     cakeBase = base;
     if (cakeCream == "add-cream"){
         creamCake(cakeCream)
     } else {
+        goLoading()
+
         if(cakeBase == "vanilla"){
             changePreviewImage(vanillaBase)
         } else if(cakeBase == "chocolate"){
@@ -33,10 +83,10 @@ function baseCake(base){
 }
 
 function creamCake(cream){
-    // disini panggil fungsi loading screen
-
     cakeCream = cream
     if(cakeCream == "add-cream"){
+        goLoading()
+
         if(cakeBase == "vanilla"){
             changePreviewImage(vanillaCream)
         } else if(cakeBase == "chocolate"){
@@ -65,8 +115,7 @@ let colorBox = document.getElementById("text-color")
 let cakeMessagePreview = document.getElementById("cake-text")
 
 function printCakeMessage(){
-    // disini panggil fungsi loading screen
-
+    goLoading()
 
     cakeMessagePreview.innerHTML = messageBox.value
     cakeMessagePreview.style.color = colorBox.value
