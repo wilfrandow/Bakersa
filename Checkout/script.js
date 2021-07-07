@@ -24,13 +24,13 @@ if(localStorage.getItem("CART") == undefined) {
 }
 
 function printProduct() {
-    let item = (name, price, desc, quantity) =>
+    let item = (name, price, desc, quantity, imgName) =>
     `<div class="itemList">
         <div class="product">
             <div class="empty">
             </div>
             <div class="breadImage">
-                <img src="Assets/${name} 1.jpg">
+                <img src="${imgName}">
             </div>
             <div class="emptyempty">
             </div>
@@ -72,7 +72,43 @@ function printProduct() {
     let itemList = document.getElementsByClassName("cartList")
     itemList[0].innerHTML = ""
     cartProduct.map((data) => {
-        itemList[0].innerHTML += item(data.name, data.price, data.desc, data.quantity)
+        let imgName
+        if (data.name == "Custom Cake") {
+            let desc = data.desc
+            // Base: xxxx, With Cream: xxxx, Desc: xxxx
+            let splitVal = desc.split(": ")
+            // ["Base", "basetext, With Cream", "yesno, Desc", "xxxx"]
+            let base = splitVal[1].split(",")[0] // basetext
+            let cream = splitVal[2].split(",")[0] // yesno
+
+            let vanillaBase = "Assets/Vanilla-base.jpg"
+            let chocolateBase = "Assets/Chocolate-base.jpg"
+            let strawberryBase = "Assets/Strawberry-base.jpg"
+            let vanillaCream = "Assets/Vanilla-cream.jpg"
+            let chocolateCream = "Assets/Chocolate-cream.jpg"
+            let strawberryCream = "Assets/Strawberry-cream.jpg"
+
+            imgName = "../CustomBread/"
+            if (cream == "Yes"){
+                if (base == "vanilla") 
+                    imgName += vanillaCream
+                else if (base == "chocolate")
+                    imgName += chocolateCream
+                else if (base == "strawberry")
+                    imgName += strawberryCream
+            } else {
+                if (base == "vanilla")
+                    imgName += vanillaBase
+                else if (base == "chocolate")
+                    imgName += chocolateBase
+                else if (base == "strawberry")
+                    imgName += strawberryBase
+            }
+        } else {
+            imgName = `Assets/${data.name} 1.jpg`
+        }
+
+        itemList[0].innerHTML += item(data.name, data.price, data.desc, data.quantity, imgName)
     })
 }
 
@@ -115,7 +151,7 @@ function runButton() {
             printProduct()
             runButton()
             countTotal()
-            console.log("clicked");
+            // console.log("clicked");
         })
         buttonMax[index].addEventListener("click", () => {
             cartProduct[index].quantity += 1
@@ -125,9 +161,9 @@ function runButton() {
             printProduct()
             runButton()
             countTotal()
-            console.log("clicked");
+            // console.log("clicked");
         })
-        console.log("sini")
+        // console.log("sini")
     }
 }
 

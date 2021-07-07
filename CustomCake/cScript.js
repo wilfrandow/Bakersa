@@ -1,16 +1,32 @@
-let vanillaBase = "./Image/Vanilla-base.jpg"
-let chocolateBase = "./Image/Chocolate-base.jpg"
-let strawberryBase = "./Image/Strawberry-base.jpg"
-let vanillaCream = "./Image/Vanilla-cream.jpg"
-let chocolateCream = "./Image/Chocolate-cream.jpg"
-let strawberryCream = "./Image/Strawberry-cream.jpg"
+let vanillaBase = "Assets/Vanilla-base.jpg"
+let chocolateBase = "Assets/Chocolate-base.jpg"
+let strawberryBase = "Assets/Strawberry-base.jpg"
+let vanillaCream = "Assets/Vanilla-cream.jpg"
+let chocolateCream = "Assets/Chocolate-cream.jpg"
+let strawberryCream = "Assets/Strawberry-cream.jpg"
 
-let cakeBase = "none";
-let cakeCream  = "none";
+// set default image in preview image
+let defPrev = document.getElementById("cake-preview")
+let defaults = `<img src="./Image/Empty-preview.jpg" alt="Cake Preview">`
+defPrev.innerHTML = defaults
+
+// set default value of radio button
+let baseCakeRadio = document.getElementsByName("base-cake")
+baseCakeRadio[0].checked = true
+
+let creamRadio = document.getElementsByName("cream")
+creamRadio[1].checked = true
+
+let cakeBase = "vanilla";
+let cakeCream  = "no-cream";
 
 function baseCake(base){
+    // disini panggil fungsi loading screen
+
     cakeBase = base;
-    if(cakeCream == "none"){
+    if (cakeCream == "add-cream"){
+        creamCake(cakeCream)
+    } else {
         if(cakeBase == "vanilla"){
             changePreviewImage(vanillaBase)
         } else if(cakeBase == "chocolate"){
@@ -18,12 +34,12 @@ function baseCake(base){
         } else {
             changePreviewImage(strawberryBase)
         }
-    } else{
-        creamCake(cakeCream)
     }
 }
 
 function creamCake(cream){
+    // disini panggil fungsi loading screen
+
     cakeCream = cream
     if(cakeCream == "add-cream"){
         if(cakeBase == "vanilla"){
@@ -34,16 +50,10 @@ function creamCake(cream){
             changePreviewImage(strawberryCream)
         }
     } else {
-        cakeCream = "none"
+        cakeCream = "no-cream"
         baseCake(cakeBase)
     }
 }
-
-window.addEventListener("load", ()=>{
-    let defPrev = document.getElementById("cake-preview")
-    let defaults = `<img src="./Image/Empty-preview.jpg" alt="Cake Preview">`
-    defPrev.innerHTML = defaults
-})
 
 function changePreviewImage(link){
     let image = (link)=>
@@ -52,14 +62,49 @@ function changePreviewImage(link){
     preview.innerHTML = image(link)
 }
 
-function printCakeMessage(){
-    let message = document.getElementById("cakemessage").value
-    let color = document.getElementById("text-color").value
+let messageBox = document.getElementById("cakemessage")
+messageBox.value = ""
 
-    let text = (message)=>
-    `<div>
-        <span style="color: ${color};">${message}</span>    
-    </div>`
-    let el = document.getElementById("cake-preview")
-    el.innerHTML += text(message)
+let colorBox = document.getElementById("text-color")
+
+let cakeMessagePreview = document.getElementById("cake-text")
+
+function printCakeMessage(){
+    // disini panggil fungsi loading screen
+
+
+    cakeMessagePreview.innerHTML = messageBox.value
+    cakeMessagePreview.style.color = colorBox.value
 }
+
+
+// Add to cart
+
+// storage:
+// name, price, rate, quantity, desc
+
+let addButton = document.getElementById("add-button")
+addButton.addEventListener("click", () => {
+    let cartProduct = localStorage.getItem("CART") == undefined ? "[]" : localStorage.getItem("CART")
+    cartProduct = JSON.parse(cartProduct)
+
+    let name = "Custom Cake"
+    let price = 10.99
+    let rate = "5"
+    let quantity = 1
+    let desc = `Base: ${cakeBase}, With Cream: ${cakeCream == "no-cream" ? "No" : "Yes"}, Message: ${messageBox.value}` 
+
+    cartProduct.push({name, price, rate, quantity, desc})
+    localStorage.setItem("CART", JSON.stringify(cartProduct))
+
+
+    // re-initialize field
+    baseCakeRadio[0].checked = true   
+    creamRadio[1].checked = true 
+
+    cakeBase = "vanilla";
+    cakeCream  = "no-cream";
+
+    messageBox.value = ""
+    colorBox.value = "#000000"
+})
