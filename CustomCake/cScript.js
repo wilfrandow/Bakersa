@@ -65,7 +65,7 @@ function baseCake(base){
     if (cakeCream == "add-cream"){
         creamCake(cakeCream)
     } else {
-        // goLoading()
+        goLoading()
 
         if(cakeBase == "vanilla"){
             changePreviewImage(vanillaBase)
