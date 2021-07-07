@@ -49,6 +49,53 @@ setInterval(() => {
     // console.log(cur_id)
 }, 3000)
 
+// CAKE
+class Cake {
+    constructor(id, image) {
+        this.id = id
+        this.image = image
+    }
+
+    get getId() {
+        return this.id
+    }
+    
+    get getImage() {
+        return this.image
+    }
+}
+
+let cakeImgs = [
+    new Cake(0, '../CustomCake/Image/Vanilla-cream-preview.jpg'),
+    new Cake(1, '../CustomCake/Image/Vanilla-base-preview.jpg'),
+    new Cake(2, '../CustomCake/Image/Chocolate-base-preview.jpg'),
+    new Cake(3, '../CustomCake/Image/Chocolate-cream-preview.jpg'),
+    new Cake(4, '../CustomCake/Image/Strawberry-base-preview.jpg'),
+    new Cake(5, '../CustomCake/Image/Strawberry-cream-preview.jpg')
+]
+
+let cake_img_a = $("#cake-img-a")
+let cake_img_b = $("#cake-img-b")
+
+let cake_cur_id = 0
+
+cake_img_a.attr("src", cakeImgs[cake_cur_id++].getImage)
+cake_img_b.attr("src", cakeImgs[cake_cur_id++].getImage)
+
+setInterval(() => {
+    if (cake_cur_id % 2 == 0){
+        cake_img_b.fadeOut(2000, () => {
+            cake_img_b.attr("src", cakeImgs[cake_cur_id++].getImage)
+        })
+    } else {
+        cake_img_b.fadeIn(2000, () => {
+            cake_img_a.attr("src", cakeImgs[cake_cur_id++].getImage)
+        })
+    }
+    if (cake_cur_id > 5) cake_cur_id = 0
+    // console.log(cur_id)
+}, 3000)
+
 
 // SLIDER ANIMATION
 let slider = $("#slider")
