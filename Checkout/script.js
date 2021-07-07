@@ -88,7 +88,7 @@ function printProduct() {
             let chocolateCream = "Assets/Chocolate-cream.jpg"
             let strawberryCream = "Assets/Strawberry-cream.jpg"
 
-            imgName = "../CustomBread/"
+            imgName = "../CustomCake/"
             if (cream == "Yes"){
                 if (base == "vanilla") 
                     imgName += vanillaCream

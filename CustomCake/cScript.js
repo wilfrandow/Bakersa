@@ -5,11 +5,6 @@ let vanillaCream = "Assets/Vanilla-cream.jpg"
 let chocolateCream = "Assets/Chocolate-cream.jpg"
 let strawberryCream = "Assets/Strawberry-cream.jpg"
 
-// set default image in preview image
-let defPrev = document.getElementById("cake-preview")
-let defaults = `<img src="./Image/Empty-preview.jpg" alt="Cake Preview">`
-defPrev.innerHTML = defaults
-
 // set default value of radio button
 let baseCakeRadio = document.getElementsByName("base-cake")
 baseCakeRadio[0].checked = true
@@ -55,15 +50,6 @@ function creamCake(cream){
     }
 }
 
-<<<<<<< Updated upstream
-=======
-window.addEventListener("load", ()=>{
-    let defPrev = document.getElementById("cake-preview")
-    let defaults = `<img src="./Assets/Vanilla-Base.jpg" alt="Cake Preview">`
-    defPrev.innerHTML = defaults
-})
-
->>>>>>> Stashed changes
 function changePreviewImage(link){
     let image = (link)=>
     `<img src="${link}" alt="Cake Preview">`
@@ -72,7 +58,7 @@ function changePreviewImage(link){
 }
 
 let messageBox = document.getElementById("cakemessage")
-messageBox.value = ""
+messageBox.value = "Happy Birthday! Enjoy your day"
 
 let colorBox = document.getElementById("text-color")
 
@@ -114,6 +100,8 @@ addButton.addEventListener("click", () => {
     cakeBase = "vanilla";
     cakeCream  = "no-cream";
 
-    messageBox.value = ""
+    messageBox.value = "Happy Birthday! Enjoy your day"
     colorBox.value = "#000000"
+
+    printCakeMessage()
 })

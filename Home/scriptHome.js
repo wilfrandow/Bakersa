@@ -66,12 +66,12 @@ class Cake {
 }
 
 let cakeImgs = [
-    new Cake(0, '../CustomCake/Image/Vanilla-cream-preview.jpg'),
-    new Cake(1, '../CustomCake/Image/Vanilla-base-preview.jpg'),
-    new Cake(2, '../CustomCake/Image/Chocolate-base-preview.jpg'),
-    new Cake(3, '../CustomCake/Image/Chocolate-cream-preview.jpg'),
-    new Cake(4, '../CustomCake/Image/Strawberry-base-preview.jpg'),
-    new Cake(5, '../CustomCake/Image/Strawberry-cream-preview.jpg')
+    new Cake(0, '../CustomCake/Assets/Vanilla-cream-preview.jpg'),
+    new Cake(1, '../CustomCake/Assets/Vanilla-base-preview.jpg'),
+    new Cake(2, '../CustomCake/Assets/Chocolate-base-preview.jpg'),
+    new Cake(3, '../CustomCake/Assets/Chocolate-cream-preview.jpg'),
+    new Cake(4, '../CustomCake/Assets/Strawberry-base-preview.jpg'),
+    new Cake(5, '../CustomCake/Assets/Strawberry-cream-preview.jpg')
 ]
 
 let cake_img_a = $("#cake-img-a")
