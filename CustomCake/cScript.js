@@ -50,11 +50,6 @@ function goLoading(){
     }, 1000);
 }
 
-function stopManual(){
-    cancelAnimationFrame(bouncingId)
-    ctx.clearRect(0,0, canvas.width, canvas.height)
-}
-
 // set default value of radio button
 let baseCakeRadio = document.getElementsByName("base-cake")
 baseCakeRadio[0].checked = true
@@ -70,7 +65,7 @@ function baseCake(base){
     if (cakeCream == "add-cream"){
         creamCake(cakeCream)
     } else {
-        goLoading()
+        // goLoading()
 
         if(cakeBase == "vanilla"){
             changePreviewImage(vanillaBase)
