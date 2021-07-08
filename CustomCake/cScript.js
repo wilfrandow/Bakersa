@@ -7,9 +7,11 @@ let strawberryCream = "Assets/Strawberry-cream.jpg"
 
 //canvas and loading screen
 const canvas = document.getElementById("loadingCanvas")
-canvas.height = 700
-canvas.width = 700
+canvas.height = 300
+canvas.width = 300
 const ctx = canvas.getContext("2d")
+
+let canvasDiv = document.getElementById("loadingScreen")
 
 function random(min, max){
     if(min>max) return -1;
@@ -17,7 +19,7 @@ function random(min, max){
     return Math.floor(Math.random()*range)+min;
 }
 
-let limit = 250
+let limit = 100
 let x = random(0, canvas.width-limit)
 let y = random(0, canvas.height-limit)
 let vx = random(8,12);
@@ -28,7 +30,7 @@ function bouncing(){
     ctx.clearRect(0,0, canvas.width, canvas.height)
     ctx.beginPath()
     const imgTag = document.getElementById("logo-loading")
-    ctx.drawImage(imgTag,x,y,250,250)
+    ctx.drawImage(imgTag,x,y,100,100)
 
     if(x > canvas.width-limit) vx = -(random(8,12));
     if(x < 0) vx = random(4,8);;
@@ -39,6 +41,10 @@ function bouncing(){
     y+=vy
 
     bouncingId = requestAnimationFrame(bouncing)
+
+    document.getElementById("loadingCanvas").style.opacity = 1
+
+    canvasDiv.style.opacity = .2
 }
 
 function goLoading(){
@@ -47,6 +53,8 @@ function goLoading(){
     setTimeout(() => {
         cancelAnimationFrame(bouncingId)
         ctx.clearRect(0,0, canvas.width, canvas.height)
+
+        canvasDiv.style.opacity = 0;
     }, 1000);
 }
 
@@ -60,39 +68,45 @@ creamRadio[1].checked = true
 let cakeBase = "vanilla";
 let cakeCream  = "no-cream";
 
-function baseCake(base){
-    cakeBase = base;
-    if (cakeCream == "add-cream"){
-        creamCake(cakeCream)
-    } else {
-        goLoading()
 
-        if(cakeBase == "vanilla"){
-            changePreviewImage(vanillaBase)
-        } else if(cakeBase == "chocolate"){
-            changePreviewImage(chocolateBase)
+function baseCake(base){
+    goLoading()
+
+    setTimeout(() => {
+        cakeBase = base;
+        if (cakeCream == "add-cream"){
+            creamCake(cakeCream)
         } else {
-            changePreviewImage(strawberryBase)
+            if(cakeBase == "vanilla"){
+                changePreviewImage(vanillaBase)
+            } else if(cakeBase == "chocolate"){
+                changePreviewImage(chocolateBase)
+            } else {
+                changePreviewImage(strawberryBase)
+            }
         }
-    }
+    }, 1000)
 }
 
 function creamCake(cream){
-    cakeCream = cream
-    if(cakeCream == "add-cream"){
-        goLoading()
+    goLoading()
 
-        if(cakeBase == "vanilla"){
-            changePreviewImage(vanillaCream)
-        } else if(cakeBase == "chocolate"){
-            changePreviewImage(chocolateCream)
-        } else{
-            changePreviewImage(strawberryCream)
+    setTimeout(() => {
+        cakeCream = cream
+        if(cakeCream == "add-cream"){
+    
+            if(cakeBase == "vanilla"){
+                changePreviewImage(vanillaCream)
+            } else if(cakeBase == "chocolate"){
+                changePreviewImage(chocolateCream)
+            } else{
+                changePreviewImage(strawberryCream)
+            }
+        } else {
+            cakeCream = "no-cream"
+            baseCake(cakeBase)
         }
-    } else {
-        cakeCream = "no-cream"
-        baseCake(cakeBase)
-    }
+    }, 1000)
 }
 
 function changePreviewImage(link){
@@ -112,8 +126,10 @@ let cakeMessagePreview = document.getElementById("cake-text")
 function printCakeMessage(){
     goLoading()
 
-    cakeMessagePreview.innerHTML = messageBox.value
-    cakeMessagePreview.style.color = colorBox.value
+    setTimeout(() => {
+        cakeMessagePreview.innerHTML = messageBox.value
+        cakeMessagePreview.style.color = colorBox.value
+    }, 1000)
 }
 
 
@@ -138,14 +154,17 @@ addButton.addEventListener("click", () => {
 
 
     // re-initialize field
-    baseCakeRadio[0].checked = true   
-    creamRadio[1].checked = true 
-
-    cakeBase = "vanilla";
-    cakeCream  = "no-cream";
-
-    messageBox.value = "Happy Birthday! Enjoy your day"
-    colorBox.value = "#000000"
-
-    printCakeMessage()
+    setTimeout(() => {
+        baseCakeRadio[0].checked = true   
+        creamRadio[1].checked = true 
+    
+        cakeBase = "vanilla";
+        cakeCream  = "no-cream";
+    
+        messageBox.value = "Happy Birthday! Enjoy your day"
+        colorBox.value = "#000000"
+    
+        printCakeMessage()
+        changePreviewImage(vanillaBase)
+    }, 1000)
 })
