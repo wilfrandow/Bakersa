@@ -70,50 +70,45 @@ let cakeCream  = "no-cream";
 
 
 function baseCake(base){
-    goLoading()
-
-    setTimeout(() => {
-        cakeBase = base;
-        if (cakeCream == "add-cream"){
-            creamCake(cakeCream)
+    cakeBase = base;
+    if (cakeCream == "add-cream"){
+        creamCake(cakeCream)
+    } else {
+        goLoading()
+        if(cakeBase == "vanilla"){
+            changePreviewImage(vanillaBase)
+        } else if(cakeBase == "chocolate"){
+            changePreviewImage(chocolateBase)
         } else {
-            if(cakeBase == "vanilla"){
-                changePreviewImage(vanillaBase)
-            } else if(cakeBase == "chocolate"){
-                changePreviewImage(chocolateBase)
-            } else {
-                changePreviewImage(strawberryBase)
-            }
+            changePreviewImage(strawberryBase)
         }
-    }, 1000)
+    }
 }
 
 function creamCake(cream){
-    goLoading()
-
-    setTimeout(() => {
-        cakeCream = cream
-        if(cakeCream == "add-cream"){
-    
-            if(cakeBase == "vanilla"){
-                changePreviewImage(vanillaCream)
-            } else if(cakeBase == "chocolate"){
-                changePreviewImage(chocolateCream)
-            } else{
-                changePreviewImage(strawberryCream)
-            }
-        } else {
-            cakeCream = "no-cream"
-            baseCake(cakeBase)
+    cakeCream = cream
+    if(cakeCream == "add-cream"){
+        goLoading()
+        if(cakeBase == "vanilla"){
+            changePreviewImage(vanillaCream)
+        } else if(cakeBase == "chocolate"){
+            changePreviewImage(chocolateCream)
+        } else{
+            changePreviewImage(strawberryCream)
         }
-    }, 1000)
+    } else {
+        cakeCream = "no-cream"
+        baseCake(cakeBase)
+    }
 }
 
 function changePreviewImage(link){
-    let image = (link)=>
-    `<img src="${link}" alt="Cake Preview">`
-    let preview = document.getElementById("cake-preview")
-    preview.innerHTML = image(link)
+    setTimeout(() => {
+        let image = (link)=>
+        `<img src="${link}" alt="Cake Preview">`
+        let preview = document.getElementById("cake-preview")
+        preview.innerHTML = image(link)
+    }, 1000)
 }
 
 let messageBox = document.getElementById("cakemessage")
